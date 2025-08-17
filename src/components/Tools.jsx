@@ -49,7 +49,7 @@ const Tools = () => {
       description: "Framework",
     },
     // Database
-    { name: "MySQL", icon: "/assets/tools/mysql.png", description: "Database" },
+    { name: "MySQL", icon: "/assets/tools/Mysql.png", description: "Database" },
     {
       name: "MongoDB",
       icon: "/assets/tools/mongoDB.png",
