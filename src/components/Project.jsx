@@ -25,7 +25,7 @@ const Project = () => {
       name: "Tracer Study",
       image: "/assets/proyek/proyek3.png",
       description:
-        "Sebuah platform e-commerce lengkap dengan fitur katalog produk, keranjang belanja, dan sistem pembayaran.",
+        "Sebuah aplikasi untuk melakukan tracer study terhadap alumni.",
       link: "#",
       tech: ["Javascript", "PHP", "Laravel 12", "Vite", "MySQL"],
     },
