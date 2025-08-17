@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import React, { useRef } from "react";
+import img from "/assets/Wira.jpg";
 
 function Beranda() {
   // Animation variants
@@ -84,7 +85,7 @@ function Beranda() {
           transition={{ delay: 0.5, type: "spring", stiffness: 50 }}
         >
           <motion.img
-            src="/public/assets/wira.jpg"
+            src={img}
             alt="Profile"
             className="w-full max-w-sm rounded-lg shadow-xl"
             whileHover={{ scale: 1.02 }}

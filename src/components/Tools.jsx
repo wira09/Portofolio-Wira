@@ -4,29 +4,77 @@ const Tools = () => {
   // Array of tool objects with name and icon properties
   const tools = [
     // Kode Editor
-    { name: "Visual Studio Code", icon: "/public/assets/tools/vscode.png", description: "Code Editor" },
+    {
+      name: "Visual Studio Code",
+      icon: "/assets/tools/vscode.png",
+      description: "Code Editor",
+    },
     // Bahasa Pemrograman
-    { name: "PHP", icon: "/public/assets/tools/PHP.png", description: "Language" },
-    { name: "JavaScript", icon: "/public/assets/tools/js.png", description: "Language" },
-    { name: "Go", icon: "/public/assets/tools/go.png", description: "Language" },
-    { name: "Node JS", icon: "/public/assets/tools/nodejs.png", description: "Language" },
+    { name: "PHP", icon: "/assets/tools/PHP.png", description: "Language" },
+    {
+      name: "JavaScript",
+      icon: "/assets/tools/js.png",
+      description: "Language",
+    },
+    { name: "Go", icon: "/assets/tools/go.png", description: "Language" },
+    {
+      name: "Node JS",
+      icon: "/assets/tools/nodejs.png",
+      description: "Language",
+    },
     // Framework
-    { name: "Bootstrap", icon: "/public/assets/tools/bootstrap.png", description: "Framework" },
-    { name: "Tailwind CSS", icon: "/public/assets/tools/tailwind.png", description: "Framework"},
-    { name: "React", icon: "/public/assets/tools/reactjs.png", description: "Framework" },
-    { name: "Express JS", icon: "/public/assets/tools/express.png", description: "Framework" },
-    { name: "Laravel", icon: "/public/assets/tools/laravel.png", description: "Framework" },
+    {
+      name: "Bootstrap",
+      icon: "/assets/tools/bootstrap.png",
+      description: "Framework",
+    },
+    {
+      name: "Tailwind CSS",
+      icon: "/assets/tools/tailwind.png",
+      description: "Framework",
+    },
+    {
+      name: "React",
+      icon: "/assets/tools/reactjs.png",
+      description: "Framework",
+    },
+    {
+      name: "Express JS",
+      icon: "/assets/tools/express.png",
+      description: "Framework",
+    },
+    {
+      name: "Laravel",
+      icon: "/assets/tools/laravel.png",
+      description: "Framework",
+    },
     // Database
-    { name: "MySQL", icon: "/public/assets/tools/mysql.png", description: "Database" },
-    { name: "MongoDB", icon: "/public/assets/tools/mongoDB.png", description: "Database" },
-    { name: "Sqlite", icon: "/public/assets/tools/Sqlite.png", description: "Database" },
+    { name: "MySQL", icon: "/assets/tools/mysql.png", description: "Database" },
+    {
+      name: "MongoDB",
+      icon: "/assets/tools/mongoDB.png",
+      description: "Database",
+    },
+    {
+      name: "Sqlite",
+      icon: "/assets/tools/Sqlite.png",
+      description: "Database",
+    },
     // Design
-    { name: "Figma", icon: "/public/assets/tools/figma.png",description: "Design App" },
-    { name: "Canva", icon: "/public/assets/tools/canva.png", description: "Design App" },
+    {
+      name: "Figma",
+      icon: "/assets/tools/figma.png",
+      description: "Design App",
+    },
+    {
+      name: "Canva",
+      icon: "/assets/tools/canva.png",
+      description: "Design App",
+    },
     // Tools
-    { name: "Github", icon: "/public/assets/tools/github.png", description: "Tools" },
-    { name: "Git", icon: "/public/assets/tools/Git.png", description: "Tools" },
-    { name: "Gitlab", icon: "/public/assets/tools/gitlab.png", description: "Tools" },
+    { name: "Github", icon: "/assets/tools/github.png", description: "Tools" },
+    { name: "Git", icon: "/assets/tools/Git.png", description: "Tools" },
+    { name: "Gitlab", icon: "/assets/tools/gitlab.png", description: "Tools" },
   ];
 
   return (
