@@ -1,6 +1,10 @@
+/* eslint-disable no-unused-vars */
 import { motion } from "framer-motion";
+import { useTheme } from "../context/ThemeContext.jsx";
 
 const Tools = () => {
+  const { isDark } = useTheme();
+
   // Array of tool objects with name and icon properties
   const tools = [
     // Kode Editor
@@ -84,7 +88,10 @@ const Tools = () => {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="text-3xl font-bold text-black dark:text-white"
+        className="text-3xl font-bold transition-colors duration-300"
+        style={{
+          color: isDark ? "#ffffff" : "#1f2937",
+        }}
       >
         Tools yang dipakai
       </motion.h2>
@@ -94,7 +101,10 @@ const Tools = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.2, duration: 0.5 }}
-        className="mt-4 text-gray-600 dark:text-gray-300 max-w-2xl"
+        className="mt-4 max-w-2xl transition-colors duration-300"
+        style={{
+          color: isDark ? "#d1d5db" : "#6b7280",
+        }}
       >
         Berikut ini beberapa tools yang biasa saya pakai untuk pembuatan Website
         ataupun Design
@@ -113,15 +123,33 @@ const Tools = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="p-4 mb-5 bg-gray-100 dark:bg-zinc-800 rounded-lg shadow-md flex flex-col items-center"
+            style={{
+              backgroundColor: isDark
+                ? "oklch(27.4% 0.006 286.033)"
+                : "#f3f4f6",
+              boxShadow: isDark
+                ? "0 25px 50px -12px rgba(0, 0, 0, 0.8)"
+                : "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+            }}
           >
             {/* Tool icon */}
             <img src={tool.icon} alt={tool.name} className="w-8 h-8" />
             {/* Tool name */}
-            <span className="text-sm mt-3 font-medium text-center text-black dark:text-white">
+            <span
+              className="text-sm mt-3 font-medium text-center text-black dark:text-white"
+              style={{
+                color: isDark ? "#ffffff" : "#1f2937",
+              }}
+            >
               {tool.name}
             </span>
             {/* Tool description */}
-            <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">
+            <p
+              className="text-xs text-gray-500 dark:text-gray-400 mt-2"
+              style={{
+                color: isDark ? "#d1d5db" : "#4b5563",
+              }}
+            >
               {tool.description}
             </p>
           </motion.div>

@@ -1,8 +1,13 @@
+/* eslint-disable no-unused-vars */
 import { motion } from "framer-motion";
 import React, { useRef } from "react";
+import { useTheme } from "../context/ThemeContext.jsx";
 import img from "/assets/Wira.jpg";
+import TextType from './TextType';
 
 function Beranda() {
+  const { isDark } = useTheme();
+
   // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -39,15 +44,34 @@ function Beranda() {
           animate="visible"
           variants={containerVariants}
         >
-          <motion.h1
-            className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gray-800 dark:text-white"
+          <TextType
+            text={["Hi, Nama Saya Mohamad Zaelani Wira Kusuma"]}
+            typingSpeed={75}
+            pauseDuration={1500}
+            showCursor={true}
+            cursorCharacter="|"
+            className="mb-4"
+            style={{
+              color: isDark ? "#ffffff" : "#1f2937",
+            }}
+            highlightWords={["Mohamad Zaelani Wira Kusuma"]}
+          />
+
+          <motion.h2
+            className="text-xl md:text-2xl mb-6 transition-colors duration-300"
+            style={{
+              color: isDark ? "#a78bfa" : "#7c3aed",
+            }}
             variants={itemVariants}
           >
-            Hi, Nama Saya Mohamad Zaelani Wira Kusuma
-          </motion.h1>
+            Full Stack Developer
+          </motion.h2>
 
           <motion.p
-            className="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8"
+            className="text-lg md:text-xl mb-8 transition-colors duration-300"
+            style={{
+              color: isDark ? "#d1d5db" : "#4b5563",
+            }}
             variants={itemVariants}
           >
             Saya adalah seorang mahasiswa di ASM Ariyanti yang memiliki passion
@@ -71,7 +95,11 @@ function Beranda() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               href="#kontak"
-              className="px-6 py-3 bg-white text-purple-600 border border-purple-600 hover:bg-purple-50 rounded-lg shadow-md transition-colors"
+              className="px-6 py-3 border border-purple-600 hover:bg-purple-50 rounded-lg shadow-md transition-colors"
+              style={{
+                backgroundColor: isDark ? "#1f2937" : "#ffffff",
+                color: isDark ? "#a78bfa" : "#7c3aed",
+              }}
             >
               Contact Me
             </motion.a>
@@ -87,7 +115,12 @@ function Beranda() {
           <motion.img
             src={img}
             alt="Profile"
-            className="w-full max-w-sm rounded-lg shadow-xl"
+            className="w-full max-w-sm rounded-lg shadow-xl transition-all duration-300"
+            style={{
+              boxShadow: isDark
+                ? "0 25px 50px -12px rgba(0, 0, 0, 0.8)"
+                : "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+            }}
             whileHover={{ scale: 1.02 }}
             transition={{ type: "spring", stiffness: 400 }}
           />

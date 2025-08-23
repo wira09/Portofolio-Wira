@@ -1,52 +1,69 @@
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
+import { useTheme } from "../context/ThemeContext.jsx";
 
 const Certificate = () => {
+  const { isDark } = useTheme();
   const sertifikat = [
     {
       name: "[Coding Camp 2025] Certificate",
       image: "/assets/certificate/sertifikat 1.jpg",
-      tech: ["HTML", "CSS", "Javascript", "Node JS", "Git", "Back End", "Front End"],
+      tech: [
+        "HTML",
+        "CSS",
+        "Javascript",
+        "Node JS",
+        "Git",
+        "Back End",
+        "Front End",
+      ],
     },
     {
       name: "UDEMY - Laravel 11 Fundamentals",
       image: "/assets/certificate/Laravel 11_1.png",
-      tech: ["PHP","Javascript","Database","Framework"],
+      tech: ["PHP", "Javascript", "Database", "Framework"],
     },
     // Dicoding
     {
       name: "Belajar Back-End Pemula dengan JavaScript",
-      image: "/assets/certificate/Dicoding/Belajar Back-End Pemula dengan JavaScript_1.png",
-      tech: ["HTML","CSS","Javascript","Node JS","API"],
+      image:
+        "/assets/certificate/Dicoding/Belajar Back-End Pemula dengan JavaScript_1.png",
+      tech: ["HTML", "CSS", "Javascript", "Node JS", "API"],
     },
     {
       name: "Belajar Dasar Git dengan GitHub",
-      image: "/assets/certificate/Dicoding/Belajar Dasar Git dengan GitHub_1.png",
-      tech: ["Github","Tools"],
+      image:
+        "/assets/certificate/Dicoding/Belajar Dasar Git dengan GitHub_1.png",
+      tech: ["Github", "Tools"],
     },
     {
       name: "Belajar Dasar Pemrograman JavaScript",
-      image: "/assets/certificate/Dicoding/Belajar Dasar Pemrograman JavaScript_1.png",
+      image:
+        "/assets/certificate/Dicoding/Belajar Dasar Pemrograman JavaScript_1.png",
       tech: ["Javascript"],
     },
     {
       name: "Belajar Dasar Pemrograman Web",
       image: "/assets/certificate/Dicoding/Belajar Dasar Pemrograman Web_1.png",
-      tech: ["HTML","CSS","Javascript"],
+      tech: ["HTML", "CSS", "Javascript"],
     },
     {
       name: "Belajar Fundamental Front-End Web Development",
-      image: "/assets/certificate/Dicoding/Belajar Fundamental Front-End Web Development_1.png",
-      tech: ["HTML","CSS","Javascript"],
+      image:
+        "/assets/certificate/Dicoding/Belajar Fundamental Front-End Web Development_1.png",
+      tech: ["HTML", "CSS", "Javascript"],
     },
     {
       name: "Belajar Membuat Front-End Web untuk Pemula",
-      image: "/assets/certificate/Dicoding/Belajar Membuat Front-End Web untuk Pemula_1.png",
-      tech: ["HTML","CSS","Javascript"],
+      image:
+        "/assets/certificate/Dicoding/Belajar Membuat Front-End Web untuk Pemula_1.png",
+      tech: ["HTML", "CSS", "Javascript"],
     },
     {
       name: "Belajar Pengembangan web Intermediate",
-      image: "/assets/certificate/Dicoding/Belajar Pengembangan web Intermediate_1.png",
-      tech: ["HTML","CSS","Javascript","Node JS","Vite","API"],
+      image:
+        "/assets/certificate/Dicoding/Belajar Pengembangan web Intermediate_1.png",
+      tech: ["HTML", "CSS", "Javascript", "Node JS", "Vite", "API"],
     },
     {
       name: "Financial Literacy 101",
@@ -55,12 +72,14 @@ const Certificate = () => {
     },
     {
       name: "Memulai Dasar Pemrograman untuk Menjadi Pengembang Software",
-      image: "/assets/certificate/Dicoding/Memulai Dasar Pemrograman untuk Menjadi Pengembang Software_1.png",
+      image:
+        "/assets/certificate/Dicoding/Memulai Dasar Pemrograman untuk Menjadi Pengembang Software_1.png",
       tech: ["Tools"],
     },
     {
       name: "Pengenalan ke Logika Pemrograman (Programming Logic 101)",
-      image: "/assets/certificate/Dicoding/Pengenalan ke Logika Pemrograman (Programming Logic 101)_1.png",
+      image:
+        "/assets/certificate/Dicoding/Pengenalan ke Logika Pemrograman (Programming Logic 101)_1.png",
       tech: ["Logic"],
     },
     // CodePolitan
@@ -142,7 +161,10 @@ const Certificate = () => {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="text-3xl font-bold text-black dark:text-white"
+        className="text-3xl font-bold"
+        style={{
+          color: isDark ? "#ffffff" : "#1f2937",
+        }}
       >
         Certificate
       </motion.h2>
@@ -152,7 +174,10 @@ const Certificate = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.2, duration: 0.5 }}
-        className="mt-4 text-gray-600 dark:text-gray-300 max-w-2xl"
+        className="mt-4 max-w-2xl"
+        style={{
+          color: isDark ? "#d1d5db" : "#4b5563",
+        }}
       >
         Berikut ini beberapa sertifikat yang saya miliki.
       </motion.p>
@@ -169,9 +194,21 @@ const Certificate = () => {
             key={index}
             variants={itemVariants}
             whileHover={{ y: -5 }}
-            className="bg-gray-100 dark:bg-zinc-900 text-white rounded-xl shadow-lg overflow-hidden border border-zinc-700 transition-all duration-300"
+            className="rounded-xl shadow-lg overflow-hidden border transition-all duration-300
+                   bg-gray-100 dark:bg-zinc-900 border-gray-300 dark:border-zinc-700"
+            style={{
+              backgroundColor: isDark
+                ? "oklch(27.4% 0.006 286.033)" // ✅ tanpa #
+                : "#f3f4f6",
+              boxShadow: isDark
+                ? "0 25px 50px -12px rgba(0, 0, 0, 0.8)"
+                : "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+            }}
           >
-            <motion.div whileHover={{ scale: 1.02 }} className="overflow-hidden">
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              className="overflow-hidden"
+            >
               <img
                 className="w-full h-auto object-cover"
                 src={project.image}
@@ -180,7 +217,12 @@ const Certificate = () => {
             </motion.div>
 
             <div className="p-6">
-              <h3 className="text-black dark:text-white text-2xl font-bold mb-2">
+              <h3
+                className="text-2xl font-bold mb-2"
+                style={{
+                  color: isDark ? "#ffffff" : "#1f2937",
+                }}
+              >
                 {project.name}
               </h3>
               <div className="flex flex-wrap gap-2 mb-6">

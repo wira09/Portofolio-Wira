@@ -1,48 +1,75 @@
 import React from "react";
 import { FaGithub, FaInstagram, FaLinkedin, FaReddit, FaYoutube } from "react-icons/fa";
+import { useTheme } from "../context/ThemeContext.jsx";
 
 const Footer = () => {
+  const { isDark } = useTheme();
   return (
     <footer className="bg-transparent text-white py-6 px-4 md:px-8">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
         {/* Kiri: Logo atau Brand */}
-        <div className="text-black dark:text-white text-2xl font-bold">Portfolio</div>
+        <div className="text-black dark:text-white text-2xl font-bold" style={{
+          color: isDark ? "#ffffff" : "#1f2937",
+        }}>Portfolio</div>
 
         {/* Tengah: Navigasi */}
         <div className="flex space-x-6 text-sm md:text-base">
-          <a href="#beranda" className="text-black dark:text-white hover:text-purple-400 transition">
+          <a href="#beranda" className="text-black dark:text-white hover:text-purple-400 transition" style={{
+            color: isDark ? "#ffffff" : "#1f2937",
+          }}>
             Beranda
           </a>
-          <a href="#tentang" className="text-black dark:text-white hover:text-purple-400 transition">
+          <a href="#tentang" className="text-black dark:text-white hover:text-purple-400 transition" style={{
+            color: isDark ? "#ffffff" : "#1f2937",
+          }}>
             Tentang
           </a>
-          <a href="#proyek" className="text-black dark:text-white hover:text-purple-400 transition">
+          <a href="#proyek" className="text-black dark:text-white hover:text-purple-400 transition" style={{
+            color: isDark ? "#ffffff" : "#1f2937",
+          }}>
             Proyek
           </a>
         </div>
 
         {/* Kanan: Ikon Sosial */}
-        <div className="flex space-x-4 text-xl">
+        <div className="flex space-x-4 text-xl" style={{
+          color: isDark ? "#ffffff" : "#1f2937",
+        }}>
           <a
             href="https://github.com/wira09"
             target="_blank"
             rel="noopener noreferrer"
+            style={{
+              color: isDark ? "#ffffff" : "#1f2937",
+            }}
           >
-            <FaGithub className="text-black dark:text-white hover:text-purple-400 transition" />
+            <FaGithub className="text-black dark:text-white hover:text-purple-400 transition" style={{
+              color: isDark ? "#ffffff" : "#1f2937",
+            }} />
           </a>
           <a
             href="https://www.instagram.com/zaelaniwira/"
             target="_blank"
             rel="noopener noreferrer"
+            style={{
+              color: isDark ? "#ffffff" : "#1f2937",
+            }}
           >
-            <FaInstagram className="text-black dark:text-white hover:text-purple-400 transition" />
+            <FaInstagram className="text-black dark:text-white hover:text-purple-400 transition" style={{
+              color: isDark ? "#ffffff" : "#1f2937",
+            }} />
           </a>
           <a
             href="https://www.linkedin.com/in/mohamad-zaelani-wira-kusuma-4859b3262/"
             target="_blank"
             rel="noopener noreferrer"
+            style={{
+              color: isDark ? "#ffffff" : "#1f2937",
+            }}
           >
-            <FaLinkedin className="text-black dark:text-white hover:text-purple-400 transition" />
+            <FaLinkedin className="text-black dark:text-white hover:text-purple-400 transition" style={{
+              color: isDark ? "#ffffff" : "#1f2937",
+            }} />
           </a>
         </div>
       </div>

@@ -1,7 +1,9 @@
 import React, { useRef } from "react";
 import { motion } from "framer-motion";
+import { useTheme } from "../context/ThemeContext.jsx";
 
 const Project = () => {
+  const { isDark } = useTheme();
   const projectRef = useRef(null);
 
   const projects = [
@@ -62,8 +64,20 @@ const Project = () => {
         transition={{ duration: 0.5 }}
         className="text-center"
       >
-        <h2 className="text-3xl md:text-4xl font-bold mb-2">Project</h2>
-        <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+        <h2
+          className="text-3xl md:text-4xl font-bold mb-2"
+          style={{
+            color: isDark ? "#ffffff" : "#1f2937",
+          }}
+        >
+          Project
+        </h2>
+        <p
+          className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto"
+          style={{
+            color: isDark ? "#d1d5db" : "#4b5563",
+          }}
+        >
           Berikut ini beberapa proyek yang telah saya buat.
         </p>
       </motion.div>
@@ -80,6 +94,14 @@ const Project = () => {
             variants={itemVariants}
             whileHover={{ y: -5 }}
             className="bg-gray-100 dark:bg-zinc-900 text-white rounded-xl shadow-lg overflow-hidden border border-zinc-700 transition-all duration-300"
+            style={{
+              backgroundColor: isDark
+                ? "oklch(27.4% 0.006 286.033)" // ✅ tanpa #
+                : "#f3f4f6",
+              boxShadow: isDark
+                ? "0 25px 50px -12px rgba(0, 0, 0, 0.8)"
+                : "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+            }}
           >
             {/* Gambar Full Width */}
             <motion.div
@@ -95,10 +117,20 @@ const Project = () => {
 
             {/* Konten Deskripsi */}
             <div className="p-6">
-              <h3 className="text-black dark:text-white text-2xl font-bold mb-2">
+              <h3
+                className="text-black dark:text-white text-2xl font-bold mb-2"
+                style={{
+                  color: isDark ? "#ffffff" : "#1f2937",
+                }}
+              >
                 {project.name}
               </h3>
-              <p className="mb-4 text-black dark:text-gray-300">
+              <p
+                className="mb-4 text-black dark:text-gray-300"
+                style={{
+                  color: isDark ? "#d1d5db" : "#4b5563",
+                }}
+              >
                 {project.description}
               </p>
 
